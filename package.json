@@ -1,0 +1,20 @@
+{
+  "name": "starterkit-assemblyscript",
+  "version": "",
+  "description": "Starter folder for writing AssemblyScript contracts on NEAR blockchain",
+  "scripts": {
+    "dev": "watch -d -n 1 'clear && yarn test:unit'",
+    "asp": "asp --verbose --nologo",
+    "test:unit": "yarn asp -f unit.spec",
+    "build": "asb --target debug",
+    "build:release": "asb",
+    "test": "yarn build:release && yarn test:unit && yarn test:simulate",
+    "test:simulate": "cargo test -- --nocapture",
+    "clean": "rm -rf ./build && rm -rf ./neardev && rm -rf ./target",
+    "test:debug": "node --inspect-brk ./node_modules/.bin/asp"
+  },
+  "keywords": ["Smart contract", "AssemblyScript", "Game development", "blockchain", "near"],
+  "devDependencies": {
+    "near-sdk-as": "^3.0.0"
+  }
+}
